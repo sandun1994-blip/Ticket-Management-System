@@ -2,10 +2,16 @@
   "name": "ticket-management-system",
   "version": "1.0.0",
   "private": true,
-  "workspaces": ["client", "server"],
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
     "dev": "bun run --filter '*' dev",
     "dev:client": "bun run --cwd client dev",
     "dev:server": "bun run --cwd server dev"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1"
   }
 }

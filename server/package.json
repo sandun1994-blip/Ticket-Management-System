@@ -2,11 +2,12 @@
   "name": "server",
   "version": "1.0.0",
   "scripts": {
-    "dev": "bun --watch src/index.ts", 
+    "dev": "bun --watch src/index.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",
+    "better-auth": "^1.6.12",
     "cors": "^2.8.5",
     "dotenv": "^17.4.2",
     "express": "^5.1.0"
