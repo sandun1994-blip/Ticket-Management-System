@@ -12,6 +12,16 @@ if (!email || !password) {
   process.exit(1);
 }
 
+// Enforce a minimum password length to prevent weak defaults (e.g. "password123")
+// from being committed as the admin credential.
+if (password.length < 16) {
+  console.error(
+    "SEED_ADMIN_PASSWORD must be at least 16 characters. " +
+      "Use a strong, unique password for the admin account."
+  );
+  process.exit(1);
+}
+
 const auth = betterAuth({
   baseURL: process.env.BETTER_AUTH_URL ?? "http://localhost:3000",
   database: prismaAdapter(prisma, { provider: "postgresql" }),

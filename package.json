@@ -12,6 +12,10 @@
     "dev:server": "bun run --cwd server dev"
   },
   "devDependencies": {
+    "@types/helmet": "^4.0.0",
     "@types/node": "^25.9.1"
+  },
+  "dependencies": {
+    "helmet": "^8.2.0"
   }
 }
