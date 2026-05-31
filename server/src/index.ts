@@ -7,6 +7,7 @@ import { toNodeHandler } from "better-auth/node";
 import { auth } from "./lib/auth";
 import { requireAuth } from "./lib/require-auth";
 import { requireAdmin } from "./lib/require-admin";
+import ticketsRouter from "./routes/tickets";
 
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
@@ -58,6 +59,8 @@ app.get("/api/me", requireAuth, (req, res) => {
   const { id, name, email, role } = req.user!;
   res.json({ user: { id, name, email, role } });
 });
+
+app.use("/api/tickets", ticketsRouter);
 
 // Export requireAdmin for use in future admin-only route files.
 // Example usage:
